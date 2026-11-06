@@ -1,5 +1,5 @@
 #pragma once
-// Structure de données pour une 2-triangulation orientée (cours p.16) :
+// Structure de données pour une 2-triangulation orientée :
 //  - un sommet  : ses coordonnées et une de ses arêtes incidentes a
 //  - une arête  : sommet initial s1, sommet final s2, triangle gauche tg, triangle droit td
 //                 (-1 = vide pour une arête externe)
@@ -10,7 +10,7 @@
 #include <cstdint>
 #include "geometry.h"
 
-struct Sommet   { Vec2 p; int a = -1; };
+struct Sommet   { Vec3 p; int a = -1; };
 struct Arete    { int s1, s2; int tg = -1, td = -1; };
 struct Triangle { int a1, a2, a3; };
 
@@ -22,14 +22,15 @@ public:
 
     void vider();
 
-    // Triangulation 2-D incrémentale (cours p.26-27)
-    void incrementale(const std::vector<Vec2>& points);
+    // Triangulation 2-D incrémentale
+    void incrementale(const std::vector<Vec3>& points);
 
-    // Flipping d'arêtes -> triangulation de Delaunay (cours p.30). Renvoie le nombre de flips.
+    // Flipping d'arêtes -> triangulation de Delaunay. Renvoie le nombre de flips.
     int flipping();
 
     // Sommet de départ de l'arête a quand on la parcourt dans le triangle t (sens trigo)
     int origine(int a, int t) const { return aretes[a].tg == t ? aretes[a].s1 : aretes[a].s2; }
+
     // Les 3 sommets du triangle t dans le sens trigonométrique
     std::array<int, 3> sommetsTriangle(int t) const {
         const Triangle& T = triangles[t];

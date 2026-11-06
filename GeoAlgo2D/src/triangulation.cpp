@@ -33,17 +33,17 @@ void Triangulation::ajouterTriangle(int u, int v, int w) {
 }
 
 // ---------------------------------------------------------------------------
-// Triangulation incrémentale (p.26-27)
+// Triangulation incrémentale
 // ---------------------------------------------------------------------------
-void Triangulation::incrementale(const std::vector<Vec2>& points) {
+void Triangulation::incrementale(const std::vector<Vec3>& points) {
     vider();
 
     // 1) tri par abscisse croissante (puis ordonnée croissante)
-    std::vector<Vec2> P = points;
-    std::sort(P.begin(), P.end(), [](Vec2 a, Vec2 b) { return a.x < b.x || (a.x == b.x && a.y < b.y); });
-    P.erase(std::unique(P.begin(), P.end(), [](Vec2 a, Vec2 b) { return a.x == b.x && a.y == b.y; }), P.end());
+    std::vector<Vec3> P = points;
+    std::sort(P.begin(), P.end(), [](Vec3 a, Vec3 b) { return a.x < b.x || (a.x == b.x && a.y < b.y); });
+    P.erase(std::unique(P.begin(), P.end(), [](Vec3 a, Vec3 b) { return a.x == b.x && a.y == b.y; }), P.end());
     const int n = (int)P.size();
-    for (const Vec2& p : P) sommets.push_back({p, -1});
+    for (const Vec3& p : P) sommets.push_back({p, -1});
     if (n < 2) return;
 
     // 2a) suite de k-1 arêtes colinéaires [P1P2] ... [Pk-1 Pk] avec les k (>= 2) points alignés
@@ -57,13 +57,13 @@ void Triangulation::incrementale(const std::vector<Vec2>& points) {
 
 // Ajoute le point P(q), situé hors du polygone Pq (grâce au tri préalable)
 void Triangulation::ajouterPoint(int q) {
-    const Vec2 P = sommets[q].p;
+    const Vec3 P = sommets[q].p;
 
     // 3a) recherche des arêtes externes "vues" depuis P.
     // On mémorise chaque arête vue orientée (u,v) de sorte que (u,v,P) soit dans le sens trigo.
     std::vector<std::pair<int, int>> vues;
     for (const Arete& A : aretes) {
-        Vec2 p1 = sommets[A.s1].p, p2 = sommets[A.s2].p;
+        Vec3 p1 = sommets[A.s1].p, p2 = sommets[A.s2].p;
         if (A.tg < 0 && A.td < 0) {
             // cas 2b : arête de la suite colinéaire initiale (aucun triangle)
             if (orientation(p1, p2, P) > 0) vues.push_back({A.s1, A.s2});
@@ -83,17 +83,7 @@ void Triangulation::ajouterPoint(int q) {
 }
 
 // ---------------------------------------------------------------------------
-// Flipping d'arêtes (p.30)
-//
-//            c                       c
-//          /   \                   / | \
-//    ca  / T1    \ bc        ca  /   |   \ bc
-//       a ------- b    ==>      a  T1|T2  b
-//    ad  \ T2    / db        ad  \   |   / db
-//          \   /                   \ | /
-//            d                       d
-//  arête e = [a,b], T1 = (a,b,c) à gauche, T2 = (b,a,d) à droite
-//  après flip : e = [d,c], T1 = (a,d,c), T2 = (d,b,c)
+// Flipping d'arêtes
 // ---------------------------------------------------------------------------
 int Triangulation::flipping() {
     // Ac <- A

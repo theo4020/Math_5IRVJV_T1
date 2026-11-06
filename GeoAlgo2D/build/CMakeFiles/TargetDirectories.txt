@@ -1,0 +1,10 @@
+C:/Users/amama/Documents/Ecole/1ESGI2/A5/Math/T1/Projet/Math_5IRVJV_T1/GeoAlgo2D/build/CMakeFiles/GeoAlgo2D.dir
+C:/Users/amama/Documents/Ecole/1ESGI2/A5/Math/T1/Projet/Math_5IRVJV_T1/GeoAlgo2D/build/CMakeFiles/INSTALL.dir
+C:/Users/amama/Documents/Ecole/1ESGI2/A5/Math/T1/Projet/Math_5IRVJV_T1/GeoAlgo2D/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/amama/Documents/Ecole/1ESGI2/A5/Math/T1/Projet/Math_5IRVJV_T1/GeoAlgo2D/build/CMakeFiles/ZERO_CHECK.dir
+C:/Users/amama/Documents/Ecole/1ESGI2/A5/Math/T1/Projet/Math_5IRVJV_T1/GeoAlgo2D/build/_deps/glfw-build/CMakeFiles/uninstall.dir
+C:/Users/amama/Documents/Ecole/1ESGI2/A5/Math/T1/Projet/Math_5IRVJV_T1/GeoAlgo2D/build/_deps/glfw-build/CMakeFiles/INSTALL.dir
+C:/Users/amama/Documents/Ecole/1ESGI2/A5/Math/T1/Projet/Math_5IRVJV_T1/GeoAlgo2D/build/_deps/glfw-build/CMakeFiles/ALL_BUILD.dir
+C:/Users/amama/Documents/Ecole/1ESGI2/A5/Math/T1/Projet/Math_5IRVJV_T1/GeoAlgo2D/build/_deps/glfw-build/src/CMakeFiles/glfw.dir
+C:/Users/amama/Documents/Ecole/1ESGI2/A5/Math/T1/Projet/Math_5IRVJV_T1/GeoAlgo2D/build/_deps/glfw-build/src/CMakeFiles/update_mappings.dir
+C:/Users/amama/Documents/Ecole/1ESGI2/A5/Math/T1/Projet/Math_5IRVJV_T1/GeoAlgo2D/build/_deps/glfw-build/src/CMakeFiles/INSTALL.dir

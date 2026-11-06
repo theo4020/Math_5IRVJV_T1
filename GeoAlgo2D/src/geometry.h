@@ -1,25 +1,24 @@
 #pragma once
 // Fonctions mathématiques de base
-// (cours : "Requêtes géométriques dans R^d" p.5, "Géométrie des triangles" p.12-13,
-//  "puissance d'un point" p.28-29)
+// ("Requêtes géométriques dans R^d", "Géométrie des triangles", "puissance d'un point")
 #include <cmath>
 #include <algorithm>
 
-struct Vec2 {
-    double x = 0, y = 0;
+struct Vec3 {
+    double x = 0, y = 0, z = 0;
 };
 
-inline Vec2 operator+(Vec2 a, Vec2 b) { return {a.x + b.x, a.y + b.y}; }
-inline Vec2 operator-(Vec2 a, Vec2 b) { return {a.x - b.x, a.y - b.y}; }
-inline Vec2 operator*(double k, Vec2 a) { return {k * a.x, k * a.y}; }
+inline Vec3 operator+(Vec3 a, Vec3 b) { return {a.x + b.x, a.y + b.y, a.z + b.z}; }
+inline Vec3 operator-(Vec3 a, Vec3 b) { return {a.x - b.x, a.y - b.y, a.z + b.z}; }
+inline Vec3 operator*(double k, Vec3 a) { return { k * a.x, k * a.y, k * a.z }; }
 
 const double EPS = 1e-9;
 
-inline double produitScalaire(Vec2 a, Vec2 b) { return a.x * b.x + a.y * b.y; }
-inline double norme(Vec2 a) { return std::sqrt(produitScalaire(a, a)); }
+inline double produitScalaire(Vec3 a, Vec3 b) { return a.x * b.x + a.y * b.y + a.z * b.z; }
+inline double norme(Vec3 a) { return std::sqrt(produitScalaire(a, a)); }
 
 // Produit vectoriel 2D = déterminant 2x2 |u v|
-inline double det2(Vec2 u, Vec2 v) { return u.x * v.y - u.y * v.x; }
+inline double det2(Vec3 u, Vec3 v) { return u.x * v.y - u.y * v.x; }
 
 // Déterminant 3x3
 inline double det3(const double m[3][3]) {
@@ -37,35 +36,37 @@ inline bool inverser2x2(const double m[2][2], double inv[2][2]) {
     return true;
 }
 
-// Angle NON orienté entre deux vecteurs non nuls (p.5) : arccos(v.w / |v||w|) dans [0, pi]
-inline double angle(Vec2 v, Vec2 w) {
+// Angle NON orienté entre deux vecteurs non nuls : arccos(v.w / |v||w|) dans [0, pi]
+inline double angle(Vec3 v, Vec3 w) {
     double c = produitScalaire(v, w) / (norme(v) * norme(w));
     return std::acos(std::clamp(c, -1.0, 1.0));
 }
 
-// Orientation de (a,b,c) = 2 x aire algébrique du triangle (p.12)
-// > 0 : sens trigonométrique, < 0 : sens horaire, = 0 : alignés
-inline double orientation(Vec2 a, Vec2 b, Vec2 c) { return det2(b - a, c - a); }
+// Orientation de (a,b,c) = 2 x aire algébrique du triangle
+// > 0 : sens trigonométrique,
+// < 0 : sens horaire,
+// = 0 : alignés
+inline double orientation(Vec3 a, Vec3 b, Vec3 c) { return det2(b - a, c - a); }
 
 // Visibilité : l'arête orientée [a,b] (intérieur à gauche) est "vue" depuis p
-// ssi p est strictement dans le demi-espace extérieur E- (p.27)
-inline bool estVue(Vec2 a, Vec2 b, Vec2 p) { return orientation(a, b, p) < -EPS; }
+// ssi p est strictement dans le demi-espace extérieur E-
+inline bool estVue(Vec3 a, Vec3 b, Vec3 p) { return orientation(a, b, p) < -EPS; }
 
 // Normale extérieure unitaire de l'arête orientée [a,b] dont l'intérieur est à gauche
-inline Vec2 normaleExterieure(Vec2 a, Vec2 b) {
-    Vec2 d = b - a;
+inline Vec3 normaleExterieure(Vec3 a, Vec3 b) {
+    Vec3 d = b - a;
     double l = norme(d);
     return {d.y / l, -d.x / l};
 }
 
 // Test d'intériorité d'un point dans un triangle (a,b,c) orienté trigo
-inline bool dansTriangle(Vec2 a, Vec2 b, Vec2 c, Vec2 p) {
+inline bool dansTriangle(Vec3 a, Vec3 b, Vec3 c, Vec3 p) {
     return orientation(a, b, p) >= 0 && orientation(b, c, p) >= 0 && orientation(c, a, p) >= 0;
 }
 
-// Centre du cercle circonscrit (p.13) : C équidistant des sommets
-// -> système linéaire 2x2 résolu par inversion de matrice
-inline bool centreCercle(Vec2 p1, Vec2 p2, Vec2 p3, Vec2& c) {
+// Centre du cercle circonscrit : C équidistant des sommets
+// résolu par inversion de matrice
+inline bool centreCercle(Vec3 p1, Vec3 p2, Vec3 p3, Vec3& c) {
     double m[2][2] = {{p2.x - p1.x, p2.y - p1.y},
                       {p3.x - p1.x, p3.y - p1.y}};
     double b0 = (p2.x * p2.x + p2.y * p2.y - p1.x * p1.x - p1.y * p1.y) / 2;
@@ -76,12 +77,12 @@ inline bool centreCercle(Vec2 p1, Vec2 p2, Vec2 p3, Vec2& c) {
     return true;
 }
 
-// Critère de Delaunay (p.28-29) : d est strictement à l'intérieur du cercle circonscrit
+// Critère de Delaunay : d est strictement à l'intérieur du cercle circonscrit
 // à (a,b,c) <=> puissance de d par rapport au cercle : ||dC||^2 - r^2 < 0
-inline bool dansCercleCirconscrit(Vec2 a, Vec2 b, Vec2 c, Vec2 d) {
-    Vec2 C;
+inline bool dansCercleCirconscrit(Vec3 a, Vec3 b, Vec3 c, Vec3 d) {
+    Vec3 C;
     if (!centreCercle(a, b, c, C)) return false;
-    Vec2 ac = a - C, dc = d - C;
+    Vec3 ac = a - C, dc = d - C;
     double r2 = produitScalaire(ac, ac);
     double puissance = produitScalaire(dc, dc) - r2;
     return puissance < -1e-9 * r2;  // tolérance relative (points cocirculaires)

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\amama\Documents\Ecole\1ESGI2\A5\Math\T1\Projet\Math_5IRVJV_T1\GeoAlgo2D\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\amama\Documents\Ecole\1ESGI2\A5\Math\T1\Projet\Math_5IRVJV_T1\GeoAlgo2D\src\enveloppe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\amama\Documents\Ecole\1ESGI2\A5\Math\T1\Projet\Math_5IRVJV_T1\GeoAlgo2D\src\triangulation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\amama\Documents\Ecole\1ESGI2\A5\Math\T1\Projet\Math_5IRVJV_T1\GeoAlgo2D\src\voronoi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\amama\Documents\Ecole\1ESGI2\A5\Math\T1\Projet\Math_5IRVJV_T1\GeoAlgo2D\build\_deps\imgui-src\imgui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\amama\Documents\Ecole\1ESGI2\A5\Math\T1\Projet\Math_5IRVJV_T1\GeoAlgo2D\build\_deps\imgui-src\imgui_draw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\amama\Documents\Ecole\1ESGI2\A5\Math\T1\Projet\Math_5IRVJV_T1\GeoAlgo2D\build\_deps\imgui-src\imgui_tables.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\amama\Documents\Ecole\1ESGI2\A5\Math\T1\Projet\Math_5IRVJV_T1\GeoAlgo2D\build\_deps\imgui-src\imgui_widgets.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\amama\Documents\Ecole\1ESGI2\A5\Math\T1\Projet\Math_5IRVJV_T1\GeoAlgo2D\build\_deps\imgui-src\backends\imgui_impl_glfw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\amama\Documents\Ecole\1ESGI2\A5\Math\T1\Projet\Math_5IRVJV_T1\GeoAlgo2D\build\_deps\imgui-src\backends\imgui_impl_opengl3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\amama\Documents\Ecole\1ESGI2\A5\Math\T1\Projet\Math_5IRVJV_T1\GeoAlgo2D\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{81B63A0C-F50F-3CA5-99D0-D02641B3F716}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

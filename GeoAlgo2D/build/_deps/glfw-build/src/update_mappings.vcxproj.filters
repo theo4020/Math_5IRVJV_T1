@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\amama\Documents\Ecole\1ESGI2\A5\Math\T1\Projet\Math_5IRVJV_T1\GeoAlgo2D\build\CMakeFiles\c5377203b9ea8946aef3d8a38b9b38d9\update_mappings.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\amama\Documents\Ecole\1ESGI2\A5\Math\T1\Projet\Math_5IRVJV_T1\GeoAlgo2D\build\_deps\glfw-src\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\amama\Documents\Ecole\1ESGI2\A5\Math\T1\Projet\Math_5IRVJV_T1\GeoAlgo2D\build\_deps\glfw-src\src\mappings.h.in">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="C:\Users\amama\Documents\Ecole\1ESGI2\A5\Math\T1\Projet\Math_5IRVJV_T1\GeoAlgo2D\build\_deps\glfw-src\CMake\GenerateMappings.cmake" />
+    <None Include="C:\Users\amama\Documents\Ecole\1ESGI2\A5\Math\T1\Projet\Math_5IRVJV_T1\GeoAlgo2D\build\_deps\glfw-build\src\CMakeFiles\update_mappings" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{DB405D70-9517-32AD-9FA5-388201A78867}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{57238BF2-1850-3063-9E46-C5E40A688BC5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

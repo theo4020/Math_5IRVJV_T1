@@ -1,11 +1,3 @@
-// Projet Géométrie algorithmique - Étape intermédiaire (partie 2D)
-//  1) Enveloppe convexe 2D : marche de Jarvis + Graham-Scan (+ comparaison des temps)
-//  2) Triangulation incrémentale 2D
-//  3) Flipping d'arêtes -> triangulation de Delaunay
-//  4) Diagramme de Voronoï 2D (dualité avec Delaunay)
-//
-// Clic gauche : ajouter un point   |   Clic droit : supprimer le point le plus proche
-// Tout est recalculé à chaque ajout / suppression.
 #include "imgui.h"
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
@@ -21,10 +13,16 @@
 #include "triangulation.h"
 #include "voronoi.h"
 
-enum Mode { JARVIS, GRAHAM, TRIANG_INC, DELAUNAY, VORONOI };
+enum Mode { 
+    JARVIS,
+    GRAHAM,
+    TRIANG_INC,
+    DELAUNAY,
+    VORONOI
+};
 
 struct App {
-    std::vector<Vec2> points;          // nuage de points (repère mathématique, y vers le haut)
+    std::vector<Vec3> points;
     int mode = JARVIS;
     bool aJour = false;
 
@@ -32,7 +30,7 @@ struct App {
     Triangulation tri;
     Voronoi voro;
     int nbFlips = 0;
-    double tEnv = 0, tTri = 0, tFlip = 0, tVoro = 0;  // temps en ms
+    double tEnv = 0, tTri = 0, tFlip = 0, tVoro = 0;
 
     // comparaison Jarvis / Graham
     double bJarvis = -1, bGraham = -1;
@@ -74,6 +72,7 @@ static void recalculer(App& A) {
 static void generer(App& A, float W, float H) {
     std::mt19937 rng(std::random_device{}());
     std::uniform_real_distribution<double> u(0, 1);
+
     // zone de dessin : à droite du menu
     double x0 = 400, x1 = W - 20, y0 = 20, y1 = H - 20;
     double cx = (x0 + x1) / 2, cy = (y0 + y1) / 2, R = std::min(x1 - x0, y1 - y0) / 2;
@@ -93,7 +92,7 @@ static void generer(App& A, float W, float H) {
 }
 
 // ---------------------------------------------------------------------------
-// Menu et listes (mises à jour en temps réel)
+// Menu et listes
 // ---------------------------------------------------------------------------
 static void menu(App& A, float W, float H) {
     ImGui::SetNextWindowPos(ImVec2(10, 10), ImGuiCond_FirstUseEver);
@@ -215,9 +214,9 @@ static void menu(App& A, float W, float H) {
 // ---------------------------------------------------------------------------
 // Dessin (ImGui background draw list ; repère écran = y vers le bas)
 // ---------------------------------------------------------------------------
-static void dessiner(const App& A, float H, Vec2 souris) {
+static void dessiner(const App& A, float H, Vec3 souris) {
     ImDrawList* dl = ImGui::GetBackgroundDrawList();
-    auto ecran = [H](Vec2 p) { return ImVec2((float)p.x, H - (float)p.y); };
+    auto ecran = [H](Vec3 p) { return ImVec2((float)p.x, H - (float)p.y); };
     const ImU32 cPoint = IM_COL32(240, 240, 240, 255), cEnv = IM_COL32(255, 170, 0, 255);
     const ImU32 cTri = IM_COL32(80, 170, 255, 255), cVoro = IM_COL32(255, 90, 120, 255);
     const ImU32 cCercle = IM_COL32(120, 255, 120, 90);
@@ -237,7 +236,7 @@ static void dessiner(const App& A, float H, Vec2 souris) {
         if (A.mode >= DELAUNAY && A.cercles) {
             for (int t = 0; t < (int)T.triangles.size(); ++t) {
                 auto s = T.sommetsTriangle(t);
-                Vec2 C;
+                Vec3 C;
                 if (centreCercle(T.sommets[s[0]].p, T.sommets[s[1]].p, T.sommets[s[2]].p, C))
                     dl->AddCircle(ecran(C), (float)norme(T.sommets[s[0]].p - C), cCercle, 64);
             }
@@ -257,7 +256,7 @@ static void dessiner(const App& A, float H, Vec2 souris) {
             }
         }
     }
-    for (const Vec2& p : A.points) dl->AddCircleFilled(ecran(p), 3.5f, cPoint);
+    for (const Vec3& p : A.points) dl->AddCircleFilled(ecran(p), 3.5f, cPoint);
 }
 
 int main() {
@@ -284,13 +283,13 @@ int main() {
 
         ImGuiIO& io = ImGui::GetIO();
         float W = io.DisplaySize.x, H = io.DisplaySize.y;
-        Vec2 souris = {io.MousePos.x, H - io.MousePos.y};  // repère mathématique
+        Vec3 souris = {io.MousePos.x, H - io.MousePos.y};  // repère mathématique
 
         // Saisie à la souris (hors du menu)
         if (!io.WantCaptureMouse) {
             if (ImGui::IsMouseClicked(ImGuiMouseButton_Left)) {
                 bool existe = false;
-                for (const Vec2& p : A.points) if (norme(p - souris) < 2) existe = true;
+                for (const Vec3& p : A.points) if (norme(p - souris) < 2) existe = true;
                 if (!existe) { A.points.push_back(souris); A.aJour = false; }
             }
             if (ImGui::IsMouseClicked(ImGuiMouseButton_Right)) {

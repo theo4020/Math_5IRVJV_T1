@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/amama/Documents/Ecole/1ESGI2/A5/Math/T1/Projet/Math_5IRVJV_T1/GeoAlgo2D/build/_deps/imgui-subbuild/CMakeFiles/imgui-populate"
+		},
+		{
+			"file" : "C:/Users/amama/Documents/Ecole/1ESGI2/A5/Math/T1/Projet/Math_5IRVJV_T1/GeoAlgo2D/build/_deps/imgui-subbuild/CMakeFiles/b159bee0556fb4893ca5968a54fa3422/imgui-populate.rule"
+		},
+		{
+			"file" : "C:/Users/amama/Documents/Ecole/1ESGI2/A5/Math/T1/Projet/Math_5IRVJV_T1/GeoAlgo2D/build/_deps/imgui-subbuild/CMakeFiles/f53725e5b1619e44a687ff124de5a35e/imgui-populate-complete.rule"
+		},
+		{
+			"file" : "C:/Users/amama/Documents/Ecole/1ESGI2/A5/Math/T1/Projet/Math_5IRVJV_T1/GeoAlgo2D/build/_deps/imgui-subbuild/CMakeFiles/858c680ea1d9332a05c1982088039a69/imgui-populate-build.rule"
+		},
+		{
+			"file" : "C:/Users/amama/Documents/Ecole/1ESGI2/A5/Math/T1/Projet/Math_5IRVJV_T1/GeoAlgo2D/build/_deps/imgui-subbuild/CMakeFiles/858c680ea1d9332a05c1982088039a69/imgui-populate-configure.rule"
+		},
+		{
+			"file" : "C:/Users/amama/Documents/Ecole/1ESGI2/A5/Math/T1/Projet/Math_5IRVJV_T1/GeoAlgo2D/build/_deps/imgui-subbuild/CMakeFiles/858c680ea1d9332a05c1982088039a69/imgui-populate-download.rule"
+		},
+		{
+			"file" : "C:/Users/amama/Documents/Ecole/1ESGI2/A5/Math/T1/Projet/Math_5IRVJV_T1/GeoAlgo2D/build/_deps/imgui-subbuild/CMakeFiles/858c680ea1d9332a05c1982088039a69/imgui-populate-install.rule"
+		},
+		{
+			"file" : "C:/Users/amama/Documents/Ecole/1ESGI2/A5/Math/T1/Projet/Math_5IRVJV_T1/GeoAlgo2D/build/_deps/imgui-subbuild/CMakeFiles/858c680ea1d9332a05c1982088039a69/imgui-populate-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/amama/Documents/Ecole/1ESGI2/A5/Math/T1/Projet/Math_5IRVJV_T1/GeoAlgo2D/build/_deps/imgui-subbuild/CMakeFiles/858c680ea1d9332a05c1982088039a69/imgui-populate-patch.rule"
+		},
+		{
+			"file" : "C:/Users/amama/Documents/Ecole/1ESGI2/A5/Math/T1/Projet/Math_5IRVJV_T1/GeoAlgo2D/build/_deps/imgui-subbuild/CMakeFiles/858c680ea1d9332a05c1982088039a69/imgui-populate-test.rule"
+		},
+		{
+			"file" : "C:/Users/amama/Documents/Ecole/1ESGI2/A5/Math/T1/Projet/Math_5IRVJV_T1/GeoAlgo2D/build/_deps/imgui-subbuild/CMakeFiles/858c680ea1d9332a05c1982088039a69/imgui-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"imgui-populate"
+		],
+		"name" : "imgui-populate"
+	}
+}

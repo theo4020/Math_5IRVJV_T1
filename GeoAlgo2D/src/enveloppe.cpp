@@ -3,9 +3,9 @@
 #include <cmath>
 
 // ---------------------------------------------------------------------------
-// Marche de Jarvis : traduction directe du pseudo-code du cours (p.3)
+// Marche de Jarvis
 // ---------------------------------------------------------------------------
-std::vector<int> marcheJarvis(const std::vector<Vec2>& P) {
+std::vector<int> marcheJarvis(const std::vector<Vec3>& P) {
     const int n = (int)P.size();
     std::vector<int> env;
     if (n == 0) return env;
@@ -16,7 +16,7 @@ std::vector<int> marcheJarvis(const std::vector<Vec2>& P) {
     for (int i = 1; i < n; ++i)
         if (P[i].x < P[i0].x || (P[i].x == P[i0].x && P[i].y < P[i0].y)) i0 = i;
 
-    Vec2 v = {0, -1};  // droite d'appui initiale : direction (0,-1)
+    Vec3 v = {0, -1};  // droite d'appui initiale : direction (0,-1)
     int i = i0;
     do {
         env.push_back(i);  // ajout du point pivot
@@ -44,20 +44,17 @@ std::vector<int> marcheJarvis(const std::vector<Vec2>& P) {
 }
 
 // ---------------------------------------------------------------------------
-// Graham-Scan (p.17-18)
-//  1) origine = barycentre B
-//  2) tri suivant l'angle orienté (Ox, BPj), puis la distance à B
-//  3) suppression des sommets non convexes dans une liste chaînée circulaire
+// Graham-Scan
 // ---------------------------------------------------------------------------
-std::vector<int> grahamScan(const std::vector<Vec2>& P) {
+std::vector<int> grahamScan(const std::vector<Vec3>& P) {
     const int n = (int)P.size();
     std::vector<int> ordre(n);
     for (int i = 0; i < n; ++i) ordre[i] = i;
     if (n < 3) return ordre;
 
     // 1) barycentre
-    Vec2 B;
-    for (const Vec2& p : P) B = B + p;
+    Vec3 B;
+    for (const Vec3& p : P) B = B + p;
     B = (1.0 / n) * B;
 
     // 2) tri angulaire autour de B
@@ -83,6 +80,7 @@ std::vector<int> grahamScan(const std::vector<Vec2>& P) {
     do {
         if (taille < 3) break;
         int p = prec[pivot], s = suiv[pivot];
+
         // pivot convexe <=> angle orienté (Pj Pj-1, Pj Pj+1) > pi <=> virage à gauche strict
         if (orientation(pt(p), pt(pivot), pt(s)) > EPS) {
             pivot = s;

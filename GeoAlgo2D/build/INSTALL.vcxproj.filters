@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\amama\Documents\Ecole\1ESGI2\A5\Math\T1\Projet\Math_5IRVJV_T1\GeoAlgo2D\build\CMakeFiles\1def92fb3a7d41893a17dd9c5bef6670\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{DB405D70-9517-32AD-9FA5-388201A78867}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

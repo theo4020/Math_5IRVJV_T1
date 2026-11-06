@@ -1,0 +1,10 @@
+^C:\USERS\AMAMA\DOCUMENTS\ECOLE\1ESGI2\A5\MATH\T1\PROJET\MATH_5IRVJV_T1\GEOALGO2D\BUILD\_DEPS\GLFW-SUBBUILD\CMAKEFILES\FB4B9F62EF8C84A97F74B6E941C03ACC\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\18\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/amama/Documents/Ecole/1ESGI2/A5/Math/T1/Projet/Math_5IRVJV_T1/GeoAlgo2D/build/_deps/glfw-subbuild -BC:/Users/amama/Documents/Ecole/1ESGI2/A5/Math/T1/Projet/Math_5IRVJV_T1/GeoAlgo2D/build/_deps/glfw-subbuild --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/amama/Documents/Ecole/1ESGI2/A5/Math/T1/Projet/Math_5IRVJV_T1/GeoAlgo2D/build/_deps/glfw-subbuild/glfw-populate.slnx
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

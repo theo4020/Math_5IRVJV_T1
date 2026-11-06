@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\amama\Documents\Ecole\1ESGI2\A5\Math\T1\Projet\Math_5IRVJV_T1\GeoAlgo2D\build\_deps\imgui-subbuild\CMakeFiles\b159bee0556fb4893ca5968a54fa3422\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{C63923AA-C12F-348D-8D6F-EBCA1C0A565D}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

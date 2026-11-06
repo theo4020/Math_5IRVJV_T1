@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/amama/Documents/Ecole/1ESGI2/A5/Math/T1/Projet/Math_5IRVJV_T1/GeoAlgo2D/build/_deps/glfw-subbuild/CMakeFiles/glfw-populate"
+		},
+		{
+			"file" : "C:/Users/amama/Documents/Ecole/1ESGI2/A5/Math/T1/Projet/Math_5IRVJV_T1/GeoAlgo2D/build/_deps/glfw-subbuild/CMakeFiles/fb4b9f62ef8c84a97f74b6e941c03acc/glfw-populate.rule"
+		},
+		{
+			"file" : "C:/Users/amama/Documents/Ecole/1ESGI2/A5/Math/T1/Projet/Math_5IRVJV_T1/GeoAlgo2D/build/_deps/glfw-subbuild/CMakeFiles/fb6610ac3ccaa68a44c20921b4c1f889/glfw-populate-complete.rule"
+		},
+		{
+			"file" : "C:/Users/amama/Documents/Ecole/1ESGI2/A5/Math/T1/Projet/Math_5IRVJV_T1/GeoAlgo2D/build/_deps/glfw-subbuild/CMakeFiles/7fb99385b5690cefc0435bf4a3b92171/glfw-populate-build.rule"
+		},
+		{
+			"file" : "C:/Users/amama/Documents/Ecole/1ESGI2/A5/Math/T1/Projet/Math_5IRVJV_T1/GeoAlgo2D/build/_deps/glfw-subbuild/CMakeFiles/7fb99385b5690cefc0435bf4a3b92171/glfw-populate-configure.rule"
+		},
+		{
+			"file" : "C:/Users/amama/Documents/Ecole/1ESGI2/A5/Math/T1/Projet/Math_5IRVJV_T1/GeoAlgo2D/build/_deps/glfw-subbuild/CMakeFiles/7fb99385b5690cefc0435bf4a3b92171/glfw-populate-download.rule"
+		},
+		{
+			"file" : "C:/Users/amama/Documents/Ecole/1ESGI2/A5/Math/T1/Projet/Math_5IRVJV_T1/GeoAlgo2D/build/_deps/glfw-subbuild/CMakeFiles/7fb99385b5690cefc0435bf4a3b92171/glfw-populate-install.rule"
+		},
+		{
+			"file" : "C:/Users/amama/Documents/Ecole/1ESGI2/A5/Math/T1/Projet/Math_5IRVJV_T1/GeoAlgo2D/build/_deps/glfw-subbuild/CMakeFiles/7fb99385b5690cefc0435bf4a3b92171/glfw-populate-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/amama/Documents/Ecole/1ESGI2/A5/Math/T1/Projet/Math_5IRVJV_T1/GeoAlgo2D/build/_deps/glfw-subbuild/CMakeFiles/7fb99385b5690cefc0435bf4a3b92171/glfw-populate-patch.rule"
+		},
+		{
+			"file" : "C:/Users/amama/Documents/Ecole/1ESGI2/A5/Math/T1/Projet/Math_5IRVJV_T1/GeoAlgo2D/build/_deps/glfw-subbuild/CMakeFiles/7fb99385b5690cefc0435bf4a3b92171/glfw-populate-test.rule"
+		},
+		{
+			"file" : "C:/Users/amama/Documents/Ecole/1ESGI2/A5/Math/T1/Projet/Math_5IRVJV_T1/GeoAlgo2D/build/_deps/glfw-subbuild/CMakeFiles/7fb99385b5690cefc0435bf4a3b92171/glfw-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"glfw-populate"
+		],
+		"name" : "glfw-populate"
+	}
+}
